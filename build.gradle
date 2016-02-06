@@ -44,9 +44,9 @@ dependencies {
     //retrofit and GSON converter
     //needs SDK 9 or up
     //TODO: update to final version when released
-    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
     //newer GSON is better??
     compile 'com.google.code.gson:gson:2.5'
@@ -54,12 +54,15 @@ dependencies {
     //SQLBrite & RxJava
     //needs SDK 9 or up
     //TODO: Update me to 1.0.0 when available
-    compile 'com.squareup.sqlbrite:sqlbrite:0.5.0'
+    compile 'com.squareup.sqlbrite:sqlbrite:0.5.1'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
 
     //better time classes (JSR-310)
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
+
+    //Auto Factory
+    compile 'com.google.auto.factory:auto-factory:1.0-beta3'
 
     //Priority Job Queue
     compile 'com.birbit:android-priority-jobqueue:1.3.5'
