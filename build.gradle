@@ -49,14 +49,14 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
     //newer GSON is better??
-    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.google.code.gson:gson:2.6'
 
     //SQLBrite & RxJava
     //needs SDK 9 or up
     //TODO: Update me to 1.0.0 when available
     compile 'com.squareup.sqlbrite:sqlbrite:0.5.1'
     compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.1'
 
     //better time classes (JSR-310)
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
@@ -75,5 +75,5 @@ dependencies {
     debugCompile 'com.facebook.stetho:stetho:1.3.0'
     debugCompile 'com.facebook.stetho:stetho-okhttp3:1.3.0'
     //logging interceptor used for debugging
-    debugCompile 'com.squareup.okhttp3:logging-interceptor:3.1.1'
+    debugCompile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
 }
