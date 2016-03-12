@@ -60,15 +60,14 @@ dependencies {
 
     //Google support libraries
     //needs SDK 7 or up (except design & annotations libraries, not sure what they need)
-    compile 'com.android.support:design:23.2.0'
-    compile 'com.android.support:recyclerview-v7:23.2.0'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
 
     //retrofit and GSON converter
     //needs SDK 9 or up
-    //TODO: no more snapshots on release
-    compile 'com.squareup.retrofit2:retrofit:2.0.0-SNAPSHOT'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0-SNAPSHOT'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-SNAPSHOT'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
 
     //newer GSON is better??
     compile 'com.google.code.gson:gson:2.6.2'
