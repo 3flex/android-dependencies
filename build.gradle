@@ -50,33 +50,30 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
     //Google support libraries
-    //needs SDK 7 or up (except design & annotations libraries, not sure what they need)
     compile 'com.android.support:design:23.2.1'
     compile 'com.android.support:recyclerview-v7:23.2.1'
 
-    //retrofit and GSON converter
-    //needs SDK 9 or up
+    //Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
 
-    //newer GSON is better??
+    //GSON
     compile 'com.google.code.gson:gson:2.6.2'
 
-    //SQLBrite & RxJava
-    //needs SDK 9 or up
+    //Rx
     compile 'com.squareup.sqlbrite:sqlbrite:0.6.2'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.2'
 
-    //better time classes (JSR-310)
+    //JSR-310 support
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
 
     //Priority Job Queue
     //TODO: no more snapshots on release
     compile 'com.birbit:android-priority-jobqueue:2.0.0-SNAPSHOT@aar'
 
-    //Dagger 2
+    //Dagger
     compile 'com.google.dagger:dagger:2.1'
     apt 'com.google.dagger:dagger-compiler:2.1'
 
