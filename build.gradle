@@ -13,13 +13,6 @@ buildscript {
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
-repositories {
-    //TODO: no more snapshots on release
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-}
-
 android {
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
@@ -54,9 +47,9 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.2.1'
 
     //Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.0.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
 
     //GSON
     compile 'com.google.code.gson:gson:2.6.2'
@@ -70,12 +63,12 @@ dependencies {
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
 
     //Priority Job Queue
-    //TODO: no more snapshots on release
-    compile 'com.birbit:android-priority-jobqueue:2.0.0-SNAPSHOT@aar'
+    //TODO: use final release of Android Priority Job Queue
+    compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha2'
 
     //Dagger
-    compile 'com.google.dagger:dagger:2.1'
-    apt 'com.google.dagger:dagger-compiler:2.1'
+    compile 'com.google.dagger:dagger:2.2'
+    apt 'com.google.dagger:dagger-compiler:2.2'
 
     //AutoValue & Extensions
     //TODO: use final release of AutoValue
