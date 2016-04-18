@@ -79,7 +79,7 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.1'
 
     //Conductor
-    compile 'com.bluelinelabs:conductor:1.1.3'
+    compile 'com.bluelinelabs:conductor:1.1.4'
 
     //development dependencies
     debugCompile 'com.facebook.stetho:stetho:1.3.1'
