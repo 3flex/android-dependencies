@@ -80,7 +80,7 @@ dependencies {
     //TODO: remove when AutoValue includes this in a release: https://github.com/google/auto/issues/268
     provided 'com.jakewharton.auto.value:auto-value-annotations:1.2-update1'
     //TODO: when https://github.com/rharter/auto-value-gson/issues/18 in a release, use automatic field naming again
-    apt 'com.ryanharter.auto.value:auto-value-gson:0.3.0'
+    apt 'com.ryanharter.auto.value:auto-value-gson:0.3.1'
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.1'
 
     //Conductor
