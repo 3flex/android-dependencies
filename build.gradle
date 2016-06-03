@@ -39,6 +39,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    //TODO: remove when this is fixed: https://github.com/rharter/auto-value-parcel/issues/64
+    apt 'com.squareup:javapoet:1.7.0'
+
     //Google support libraries
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
