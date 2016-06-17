@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.squareup.sqldelight:gradle-plugin:0.4.0'
+        classpath 'com.squareup.sqldelight:gradle-plugin:0.4.2'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
     }
@@ -14,8 +14,8 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    compileSdkVersion 24
+    buildToolsVersion '24.0.0'
 
     dataBinding {
         enabled = true
@@ -41,29 +41,33 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    //TODO: remove when this is fixed: https://github.com/rharter/auto-value-parcel/issues/64
-    apt 'com.squareup:javapoet:1.7.0'
-
     //Google support libraries
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
 
     //test dependencies
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support:support-annotations:23.4.0'
+    androidTestCompile 'com.android.support:support-annotations:24.0.0'
 
     //Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.0.2'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
     //GSON
-    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.google.code.gson:gson:2.7'
 
     //Rx
     compile 'com.squareup.sqlbrite:sqlbrite:0.6.3'
@@ -77,10 +81,8 @@ dependencies {
     compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha3'
 
     //Dagger
-    //TODO: remove Guava dependency when this is in a Dagger release: https://github.com/google/dagger/issues/228
-    apt 'com.google.guava:guava:19.0'
-    compile 'com.google.dagger:dagger:2.4'
-    apt 'com.google.dagger:dagger-compiler:2.4'
+    compile 'com.google.dagger:dagger:2.5'
+    apt 'com.google.dagger:dagger-compiler:2.5'
 
     //AutoValue
     apt 'com.google.auto.value:auto-value:1.2'
@@ -91,7 +93,7 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.2'
 
     //Conductor
-    compile 'com.bluelinelabs:conductor:1.1.6'
+    compile 'com.bluelinelabs:conductor:2.0.0-SNAPSHOT'
 
     //Timber
     compile 'com.jakewharton.timber:timber:4.1.2'
