@@ -71,8 +71,7 @@ dependencies {
 
     //Rx
     compile 'com.squareup.sqlbrite:sqlbrite:0.6.3'
-    compile 'io.reactivex:rxandroid:1.2.0'
-    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxandroid:1.2.1'
 
     //JSR-310 support
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
