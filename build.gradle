@@ -78,7 +78,7 @@ dependencies {
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
 
     //Priority Job Queue
-    compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha3'
+    compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha4'
 
     //Dagger
     compile 'com.google.dagger:dagger:2.5'
