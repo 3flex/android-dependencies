@@ -41,13 +41,6 @@ android {
     }
 }
 
-repositories {
-    mavenCentral()
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-}
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -92,7 +85,7 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.2'
 
     //Conductor
-    compile 'com.bluelinelabs:conductor:2.0.0-SNAPSHOT'
+    compile 'com.bluelinelabs:conductor:2.0.0-rc3'
 
     //Timber
     compile 'com.jakewharton.timber:timber:4.1.2'
