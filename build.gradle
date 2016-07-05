@@ -70,7 +70,7 @@ dependencies {
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
 
     //Priority Job Queue
-    compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha5'
+    compile 'com.birbit:android-priority-jobqueue:2.0.0-beta1'
 
     //Dagger
     compile 'com.google.dagger:dagger:2.5'
@@ -85,7 +85,7 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.2'
 
     //Conductor
-    compile 'com.bluelinelabs:conductor:2.0.0-rc5'
+    compile 'com.bluelinelabs:conductor:2.0.0'
 
     //Timber
     compile 'com.jakewharton.timber:timber:4.1.2'
