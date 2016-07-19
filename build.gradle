@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.squareup.sqldelight:gradle-plugin:0.4.2'
+        classpath 'com.squareup.sqldelight:gradle-plugin:0.4.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
     }
@@ -45,9 +45,9 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //Google support libraries
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:design:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.1.0'
+    compile 'com.android.support:design:24.1.0'
+    compile 'com.android.support:recyclerview-v7:24.1.0'
 
     //test dependencies
     testCompile 'junit:junit:4.12'
@@ -63,7 +63,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
 
     //Rx
-    compile 'com.squareup.sqlbrite:sqlbrite:0.6.3'
+    compile 'com.squareup.sqlbrite:sqlbrite:0.7.0'
     compile 'io.reactivex:rxandroid:1.2.1'
 
     //JSR-310 support
@@ -85,7 +85,7 @@ dependencies {
     apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.2'
 
     //Conductor
-    compile 'com.bluelinelabs:conductor:2.0.0'
+    compile 'com.bluelinelabs:conductor:2.0.1'
 
     //Timber
     compile 'com.jakewharton.timber:timber:4.1.2'
