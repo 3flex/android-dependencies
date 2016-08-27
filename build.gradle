@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.squareup.sqldelight:gradle-plugin:0.4.3'
+        classpath 'com.squareup.sqldelight:gradle-plugin:0.4.4'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
     }
@@ -45,15 +45,15 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //Google support libraries
-    compile 'com.android.support:appcompat-v7:24.1.0'
-    compile 'com.android.support:design:24.1.0'
-    compile 'com.android.support:recyclerview-v7:24.1.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:recyclerview-v7:24.2.0'
 
     //test dependencies
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support:support-annotations:24.1.0'
+    androidTestCompile 'com.android.support:support-annotations:24.2.0'
 
     //Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
@@ -70,25 +70,26 @@ dependencies {
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.3'
 
     //Priority Job Queue
-    compile 'com.birbit:android-priority-jobqueue:2.0.0-beta1'
+    compile 'com.birbit:android-priority-jobqueue:2.0.0'
 
     //Dagger
-    compile 'com.google.dagger:dagger:2.5'
-    apt 'com.google.dagger:dagger-compiler:2.5'
+    compile 'com.google.dagger:dagger:2.6'
+    apt 'com.google.dagger:dagger-compiler:2.6'
 
     //AutoValue
-    apt 'com.google.auto.value:auto-value:1.2'
+    apt 'com.google.auto.value:auto-value:1.3-rc2'
     //TODO: remove when AutoValue includes this in a release: https://github.com/google/auto/issues/268
     provided 'com.jakewharton.auto.value:auto-value-annotations:1.2-update1'
     //TODO: when https://github.com/rharter/auto-value-gson/issues/18 in a release, use automatic field naming again
-    apt 'com.ryanharter.auto.value:auto-value-gson:0.3.1'
-    apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.2'
+    apt 'com.ryanharter.auto.value:auto-value-gson:0.4.2'
+    provided 'com.ryanharter.auto.value:auto-value-gson:0.4.2'
+    apt 'com.ryanharter.auto.value:auto-value-parcel:0.2.4-rc2'
 
     //Conductor
     compile 'com.bluelinelabs:conductor:2.0.1'
 
     //Timber
-    compile 'com.jakewharton.timber:timber:4.1.2'
+    compile 'com.jakewharton.timber:timber:4.3.0'
 
     //Pretty FABs
     compile 'com.getbase:floatingactionbutton:1.10.1'
