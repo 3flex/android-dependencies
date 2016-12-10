@@ -13,12 +13,8 @@ apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.2"
-
-    dataBinding {
-        enabled = true
-    }
-
+    buildToolsVersion "25.0.1"
+    dataBinding.enabled = true
     defaultConfig {
         applicationId "com.example.matt.myfirstapp"
         minSdkVersion 16
@@ -55,18 +51,19 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support:support-annotations:25.0.1'
 
-    //Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+
 
     //GSON
     compile 'com.google.code.gson:gson:2.8.0'
 
-    //Rx
+    //Rx v1
     compile 'com.squareup.sqlbrite:sqlbrite:1.0.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.3'
+        //Retrofit
+        compile 'com.squareup.retrofit2:retrofit:2.1.0'
+        compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+        compile 'com.squareup.okhttp3:okhttp:3.5.0'
 
     //JSR-310 support
     compile 'com.jakewharton.threetenabp:threetenabp:1.0.4'
@@ -100,5 +97,5 @@ dependencies {
     debugCompile 'com.facebook.stetho:stetho:1.4.1'
     debugCompile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
     //logging interceptor used for debugging
-    debugCompile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    debugCompile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
 }
