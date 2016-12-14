@@ -101,7 +101,7 @@ dependencies {
     compile 'com.bluelinelabs:conductor:2.0.4'
 
     //Timber
-    compile 'com.jakewharton.timber:timber:4.3.1'
+    compile 'com.jakewharton.timber:timber:4.4.0'
 
     //Pretty FABs
     compile 'com.getbase:floatingactionbutton:1.10.1'
