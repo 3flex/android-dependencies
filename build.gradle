@@ -108,7 +108,7 @@ dependencies {
     provided 'com.ryanharter.auto.value:auto-value-gson:0.4.5'
 
     //Conductor
-    compile 'com.bluelinelabs:conductor:2.0.5'
+    compile 'com.bluelinelabs:conductor:2.0.6'
 
     //Timber
     compile 'com.jakewharton.timber:timber:4.5.1'
