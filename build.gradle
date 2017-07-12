@@ -69,17 +69,17 @@ dependencies {
     testImplementation "com.google.truth:truth:0.32"
 
     //GSON
-    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.code.gson:gson:2.8.1'
 
     //Rx v1
-    implementation 'com.squareup.sqlbrite:sqlbrite:1.1.1'
+    implementation 'com.squareup.sqlbrite:sqlbrite:1.1.2'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'io.reactivex:rxjava:1.3.0'
 
     //Rx v2
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'com.github.akarnokd:rxjava2-extensions:0.16.4'
+    implementation 'com.github.akarnokd:rxjava2-extensions:0.17.2'
         //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
@@ -106,7 +106,7 @@ dependencies {
     compileOnly 'com.ryanharter.auto.value:auto-value-gson:0.4.6'
 
     //Conductor
-    implementation 'com.bluelinelabs:conductor:2.1.2'
+    implementation 'com.bluelinelabs:conductor:2.1.4'
 
     //Timber
     implementation 'com.jakewharton.timber:timber:4.5.1'
@@ -115,7 +115,7 @@ dependencies {
     implementation 'com.android.support:customtabs:25.4.0'
     implementation 'net.openid:appauth:0.5.1'
     implementation 'org.nanohttpd:nanohttpd-webserver:2.3.1'
-    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.6.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.8.1'
 
     //Pretty FABs
     implementation 'com.getbase:floatingactionbutton:1.10.1'
