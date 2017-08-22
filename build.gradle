@@ -4,22 +4,23 @@ buildscript {
     }
     dependencies {
         classpath 'com.squareup.sqldelight:gradle-plugin:0.6.1'
-        classpath "com.fernandocejas.frodo:frodo-plugin:0.8.3"
     }
 }
 apply plugin: 'com.squareup.sqldelight'
 apply plugin: 'com.android.application'
-apply plugin: 'com.fernandocejas.frodo'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-android-extensions'
 
 android {
     // TODO See what can be applied from https://developer.android.com/studio/build/gradle-tips.html
-    compileSdkVersion 25
-    buildToolsVersion "26.0.0"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
     dataBinding.enabled = true
     defaultConfig {
         applicationId "com.example.matt.myfirstapp"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,6 +28,10 @@ android {
         manifestPlaceholders = [
                 'appAuthRedirectScheme': 'customscheme'
         ]
+        // TODO remove this workaround that was introduced to successfully build with Kotlin
+        javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+
+//        multiDexEnabled = true
     }
     buildTypes {
         release {
@@ -37,10 +42,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-    //TODO: remove when only using RxJava 2
-    packagingOptions {
-        exclude 'META-INF/rxjava.properties'
+        kotlinOptions {
+            freeCompilerArgs += ["-Xjsr305-annotations=enable"]
+        }
     }
 }
 
@@ -51,29 +55,33 @@ dependencies {
 //        }
 //    }
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     //Google support libraries
-    implementation 'com.android.support:appcompat-v7:25.4.0'
-    implementation 'com.android.support:design:25.4.0'
-    implementation 'com.android.support:recyclerview-v7:25.4.0'
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.android.support:design:26.0.1'
+    implementation 'com.android.support:recyclerview-v7:26.0.1'
+    implementation 'com.google.guava:guava:22.0-android'
+//    implementation 'com.android.support:multidex:1.0.2'
 
     //test dependencies
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    androidTestImplementation 'com.android.support.test:runner:0.5'
-    androidTestImplementation 'com.android.support:support-annotations:25.4.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.0'
+    androidTestImplementation 'com.android.support:support-annotations:26.0.1'
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.8.1'
     testImplementation "com.google.truth:truth:0.34"
+    compile 'com.squareup.retrofit2:retrofit-mock:2.3.0'
 
     //GSON
     implementation 'com.google.code.gson:gson:2.8.1'
 
     //Rx v2
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.2'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'com.github.akarnokd:rxjava2-extensions:0.17.2'
+    implementation 'com.github.akarnokd:rxjava2-extensions:0.17.5'
     implementation 'com.squareup.sqlbrite2:sqlbrite:2.0.0'
         //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -89,13 +97,15 @@ dependencies {
 
     //Dagger
     implementation 'com.google.dagger:dagger:2.11'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    kapt 'com.google.dagger:dagger-compiler:2.11'
+
+    kapt "com.android.databinding:compiler:$apg_version"
 
     //AutoValue
-    annotationProcessor 'com.google.auto.value:auto-value:1.4.1'
+    kapt 'com.google.auto.value:auto-value:1.4.1'
     //TODO: remove when AutoValue includes this in a release: https://github.com/google/auto/issues/268
     compileOnly 'com.jakewharton.auto.value:auto-value-annotations:1.4'
-    annotationProcessor 'com.ryanharter.auto.value:auto-value-gson:0.5.0'
+    kapt 'com.ryanharter.auto.value:auto-value-gson:0.5.0'
     compileOnly 'com.ryanharter.auto.value:auto-value-gson:0.5.0'
 
     //Conductor
@@ -105,7 +115,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.5.1'
 
     //OAuth
-    implementation 'com.android.support:customtabs:25.4.0'
+    implementation 'com.android.support:customtabs:26.0.1'
     implementation 'net.openid:appauth:0.5.1'
     implementation 'org.nanohttpd:nanohttpd-webserver:2.3.1'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.8.1'
@@ -114,8 +124,11 @@ dependencies {
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
     //development dependencies
-    debugImplementation 'com.facebook.stetho:stetho:1.5.0'
-    debugImplementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     //logging interceptor used for debugging
-    debugImplementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 }
